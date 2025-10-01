@@ -5,7 +5,7 @@ on:
     branches: [ spm12-ubuntu20.04 ]  # pinned branch
 
 jobs:
-  build-and-pusblish:
+  build-and-deploy:
     runs-on: ubuntu-latest
     permissions:
       contents: read
@@ -28,5 +28,5 @@ jobs:
           push: true
           tags: | 
             ghcr.io/${{ github.repository }}:12-ubuntu20.04
-            ghcr.io/${{ github.repository }}:12-ubuntu20.04-{{ github.sha }}
+            ghcr.io/${{ github.repository }}:12-ubuntu20.04-${{ github.sha }}
           provenance: false
